@@ -20,9 +20,19 @@ function initializePage() {
 }
 
 function projectClick(e) {
+    console.log('project clicked!');
     // prevent the page from reloading 
     e.preventDefault();
     // In an event handler, $(this) refers to 
     // the object that triggered the event 
     $(this).css("background-color", "#7fff00");
+
+    var projectTitle = $(this).find('p').text();
+
+    console.log('projectTitle is ' + projectTitle);
+
+    var jumbotronHeader = $(".jumbotron h1");
+    console.log(jumbotronHeader.text());
+    jumbotronHeader.text(projectTitle);
+
 }
